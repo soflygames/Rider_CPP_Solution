@@ -1,21 +1,28 @@
-#include <iostream>
-#include <stdlib.h>
+#include<iostream>
 
+class Rectangle
+{
+public:
+    int m_length;
+    int m_width;
 
+    // Default constructor
+    Rectangle()
+    {
+        // We don't need to do anything here, because m_length and m_width will be set in the main function
+    }
 
+    int getArea() const
+    {
+        return m_length * m_width;
+    }
+};
 
 int main()
 {
-    system("CLS");
-
-    
-    int var = 5;
-    int*ptr = &var;
-    
-    std::cout << "Value of var: " << var << std::endl;
-    std::cout << "Derefferenced of *var: " << *ptr << std::endl;
-    std::cout << "value of ptr: " << ptr << std::endl;
-    std::cout << "value of &var " << &var << std::endl;
-    std::cout << "value of &ptr " << &ptr << std::endl;
-    //std::cout << "value of *var " << *var << std::endl;
+    Rectangle rect;
+    rect.m_length = 5; // set length
+    rect.m_width = 10; // set width
+    std::cout << "Area of rectangle: " << rect.getArea() << std::endl; // prints: Area of rectangle: 50
+    return 0;
 }
